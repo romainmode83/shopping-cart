@@ -11,3 +11,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.home {
+  background-image: url(./assets/images/cat-white-bg.webp);
+}
