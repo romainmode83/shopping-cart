@@ -1,0 +1,13 @@
+
+.home {
+    background-image: url('./assets/images/cat-white-bg.webp');
+    height: calc(100vh - 60px);
+    background-size: cover;
+}
+
+.isActive {
+    border-bottom: 2px solid white;
+}
+.notActive {
+    border: none;
+}
