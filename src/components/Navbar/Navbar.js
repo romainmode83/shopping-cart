@@ -4,9 +4,11 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Col from 'react-bootstrap/Col';
 import { LinkContainer } from 'react-router-bootstrap'
+import { Link, useLocation } from 'react-router-dom';
+
 
 const MainNav = () => {
-
+  let pathname = useLocation().pathname;
 
   return (
     <Navbar bg='dark' expand="sm"  >
@@ -17,21 +19,23 @@ const MainNav = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <LinkContainer  end to="/" 
-              className={({ isActive }) =>
-                isActive ? 'isActive' : undefined
-              }
-            >
-              <Nav.Link className="text-white mx-3" href="#home">Home</Nav.Link>
-            </LinkContainer>
-            <LinkContainer end to="/shop" exact={true}
-              className={({ isActive }) =>
-                isActive ? 'isActive' : undefined
-              }
-              >
-              <Nav.Link className="text-white mx-3 " href="#shop">Shop</Nav.Link>
-            </LinkContainer>
-            <Nav.Link className="text-white mx-3" href="/link">Cart</Nav.Link>
+            
+              <Nav.Link 
+              as={Link} 
+              to="/" 
+              className={`text-white mx-3 ${pathname === '/' && 'isActive'}`} >Home</Nav.Link>
+            
+            
+              <Nav.Link 
+              as={Link} 
+              to="/shop" 
+              className={`text-white mx-3 ${pathname === '/shop' && 'isActive'}`} >Shop</Nav.Link>
+            
+              <Nav.Link 
+              as={Link} 
+              to="/cart" 
+              className={`text-white mx-3 ${pathname === '/cart' && 'isActive'}`}  >Cart</Nav.Link>
+            
           </Nav>
         </Navbar.Collapse>
       </Col>
