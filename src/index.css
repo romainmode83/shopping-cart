@@ -15,3 +15,32 @@ code {
 .home {
   background-image: url(./assets/images/cat-white-bg.webp);
 }
+:root {
+  --bs-dark: red;
+}
+
+.home {
+  height: calc(100vh - 60px);
+  background-image: url('./assets/images/cat-white-bg.webp');
+  
+  background-size: cover;
+}
+
+.isActive {
+  border-bottom: 2px solid white;
+}
+.notActive {
+  border: none;
+}
+
+
+:root {
+  --bs-dark: red;
+}
+.shop {
+  margin-top: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 3rem;
+}

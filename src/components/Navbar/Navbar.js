@@ -3,7 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Col from 'react-bootstrap/Col';
-import { LinkContainer } from 'react-router-bootstrap'
 import { Link, useLocation } from 'react-router-dom';
 
 
