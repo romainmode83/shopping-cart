@@ -7,7 +7,7 @@ import CartContext from "./components/CartContext";
 
 const RouteSwitch = () => {
     return (
-        <CartContext.Provider value=''>
+        <CartContext.Provider value={[]}>
         <BrowserRouter>
             <Navbar/>
             <Routes>

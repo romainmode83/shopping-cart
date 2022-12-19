@@ -1,8 +1,12 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import Item from "./Item";
+import { useContext } from "react";
+import CartContext from "../CartContext";
 
 const Shop = () => {
+    let cartItems = useContext(CartContext);
+
     const [state, setState] = useState([
         {   price: '65',
         },
@@ -35,18 +39,29 @@ const Shop = () => {
                         })
                         
                 });
-                console.log(newState)
                 setState(newState);
         });
         }, []);
+        
+        const handleAdd = (e) => {
+            console.log(e.target.id)
+            const item = state.map( (stateItem, index) => {
+                if (e.target.id === stateItem.id) {
+                    console.log(stateItem)
+                    cartItems.push(stateItem)
+                }
+            })
+        }
     
         const items = state.map( (item, index) => {
             if(item.id){
             return <Item 
             key={item.id}
+            id={item.id}
             url={item.url}
             descr={item.alt_description}
             price={item.price}
+            handleAdd={handleAdd}
             ></Item>
             }
         });
