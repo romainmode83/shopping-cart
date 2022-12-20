@@ -5,7 +5,7 @@ import { useContext } from "react";
 import CartContext from "../CartContext";
 
 const Shop = () => {
-    let cartItems = useContext(CartContext);
+    const { cartItems, setCartItems} = useContext(CartContext)
 
     const [state, setState] = useState([
         {   price: '65',
@@ -42,16 +42,26 @@ const Shop = () => {
                 setState(newState);
         });
         }, []);
-        /// to refactor to not mutate array when changing context
-        const handleAdd = (e) => {
-            console.log(e.target.id)
-            const item = state.map( (stateItem, index) => {
-                if (e.target.id === stateItem.id) {
-                    console.log(stateItem)
-                    cartItems.push(stateItem)
+        /* const handleAdd = (e) => {
+            state.forEach( (stateItem) => {
+                console.log(`cartItems is = ${cartItems}, stateItem is = ${stateItem})`);
+                if(cartItems.includes(stateItem)) {
+                    return;
                 }
-            })
-        }
+                console.log(cartItems)
+                if (e.target.id === stateItem.id) {
+                    setCartItems([...cartItems, stateItem])
+                    return;
+                }
+            });
+        }*/
+        const handleAdd = (e) => {
+            const isInCart = cartItems.some(item => item.id === e.target.id);
+            if (!isInCart) {
+              const stateItem = state.find(item => item.id === e.target.id);
+              setCartItems([...cartItems, stateItem]);
+            }
+          };
     
         const items = state.map( (item, index) => {
             if(item.id){

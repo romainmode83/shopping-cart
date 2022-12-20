@@ -6,9 +6,9 @@ import CartItem from "./CartItem";
 
 const Cart = () => {
 
-    let cartItems = useContext(CartContext);
+    const {cartItems, setCartItems} = useContext(CartContext);
 
-    const show = cartItems.map( item => {
+   const itemList = cartItems.map( item => {
         console.log(cartItems.length)
         return <CartItem 
             key={item.id}
@@ -27,9 +27,10 @@ const Cart = () => {
              : <h1 className="text-center p-5"> You have no cat in your cart yet..</h1>
             }
                 
-            
-            {show} 
+            <div className="d-flex justify-content-center gap-5">{itemList}</div>
+
             </div>
+               
     )
 }
 

@@ -4,10 +4,13 @@ import Shop from './components/Shop/Shop';
 import Navbar from "./components/Navbar/Navbar";
 import Cart from "./components/Cart/Cart";
 import CartContext from "./components/CartContext";
+import { useState } from "react";
 
 const RouteSwitch = () => {
+    const [cartItems, setCartItems] = useState([]);
+
     return (
-        <CartContext.Provider value={[]}>
+        <CartContext.Provider value={{cartItems, setCartItems }}>
         <BrowserRouter>
             <Navbar/>
             <Routes>

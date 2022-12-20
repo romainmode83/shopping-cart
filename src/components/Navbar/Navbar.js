@@ -12,7 +12,7 @@ const MainNav = () => {
   return (
     <Navbar bg='dark' expand="sm"  >
       <Col xxl={10}>
-        <Navbar.Brand className="ms-3 text-white" href="#home"> CatSaver</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/" className="ms-3 text-white" href="#home"> CatSaver</Navbar.Brand>
       </Col>
       <Col>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

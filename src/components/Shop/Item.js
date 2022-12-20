@@ -1,11 +1,10 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Card } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
-import CartContext from '../CartContext';
+
 
 const Item = (props) => {
     
-
     const {id, url, descr, price, handleAdd} = props;
     return (
                     <Card style={{ width: '30rem' }}>

@@ -1,14 +1,23 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 import { Button } from "react-bootstrap";
+import { useContext } from "react";
+import CartContext from "../CartContext";
 
 const CartItem = (props) => {
-
+    const {cartItems, setCartItems} = useContext(CartContext)
     const {id, url, descr, price} = props;
 
     /// implement changing usecontext
     const handleRemove = (e) => {
         console.log(e.target.id)
+        const newState = cartItems.filter( (item) => {
+          if(item.id !== e.target.id) {
+            return item;
+          }
+          
+        })
+        setCartItems(newState)
     }
 
     return (
