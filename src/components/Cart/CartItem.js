@@ -6,6 +6,7 @@ const CartItem = (props) => {
 
     const {id, url, descr, price} = props;
 
+    /// implement changing usecontext
     const handleRemove = (e) => {
         console.log(e.target.id)
     }

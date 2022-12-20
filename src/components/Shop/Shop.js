@@ -42,7 +42,7 @@ const Shop = () => {
                 setState(newState);
         });
         }, []);
-        
+        /// to refactor to not mutate array when changing context
         const handleAdd = (e) => {
             console.log(e.target.id)
             const item = state.map( (stateItem, index) => {
