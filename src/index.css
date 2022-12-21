@@ -36,6 +36,7 @@ code {
 
 :root {
   --bs-dark: red;
+  --bs-dark-rgb: '111, 111, 111'
 }
 .shop {
   margin-top: 5rem;
